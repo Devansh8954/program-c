@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main() {
-    int a[100][100][100];
+    int a[10][10][10];
     int row;
     int col;
     int th;
@@ -20,7 +20,7 @@ int main() {
         {
             for(int k=0; k<th; k++)
             {
-                scanf("%d",&a[i][j][th]);
+                scanf("%d",&a[i][j][k]);
             }
         }
     }
@@ -33,9 +33,10 @@ int main() {
         {
             for(int k=0; k<th; k++)
             {
-                printf("%d",a[i][j]);
+                printf("%d",a[i][j][k]);
             }
         }
+        printf("\n");
     }
 
 }
