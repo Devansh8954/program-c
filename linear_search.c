@@ -9,7 +9,7 @@ int main() {
     scanf("%d",&size);
 
     //Input array elements
-    printf("Enter array elements \n");
+    printf("Enter %d array elements \n",size);
     for(int i=0; i<size; i++)
     {
         scanf("%d",&a[i]);
@@ -22,7 +22,10 @@ int main() {
     {
         if(n == a[i])
         {
-            printf("Found at index : %d ",i);
+            printf("Found at index : %d ",i+1);
         }
+    }
+    if(i>size) {
+        printf("Not found");
     }
 }
