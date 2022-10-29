@@ -53,18 +53,18 @@ void enqueue() {
     front=rear;
     }
     else {
-      tmp=(struct node *)malloc(sizeof(struct node));
+      tmp=(struct Node *)malloc(sizeof(struct Node));
       rear->next = tmp;
       tmp->data = val;
       tmp->next = NULL;
       rear = tmp;
     }
 }
-void dequeue(); {
+void dequeue() {
    if(front == NULL)
    printf("\n Queue Underflow \n");
     if (tmp->next != NULL) {
-      tmp = temp->next;
+      tmp = tmp->next;
       printf("\n Element deleted from queue is : %d \n",front->data);
       free(front);
       front = tmp;
@@ -78,14 +78,16 @@ void dequeue(); {
 }
 void display() {
    tmp = front;
-   if((front == NULL) && (rear == NULL)) 
-   printf("\n "Queue is empty \n");
+   if((tmp == NULL)) 
+   printf("\n Queue is empty \n");
 
    else {
-      ptr = top;
-      printf("\n Queue elements are:\n");
-      while(tmp != NULL) {
+      printf("\n Queue elements are: \n");
+      while(tmp != rear) {
         printf("\n %d",tmp->data);
         tmp = tmp->next;
     }
+    printf("\n %d",tmp->data);
+    tmp = tmp->next;
+   }
 }
