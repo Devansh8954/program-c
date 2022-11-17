@@ -12,7 +12,6 @@ struct Node
 void main()
 {
    int choice, value;
-   printf("\n:: Queue Implementation using Linked List ::\n");
    while(1){
       printf("\n****** MENU ******\n");
       printf("1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n");
