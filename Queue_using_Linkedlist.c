@@ -21,9 +21,11 @@ void main()
 	 case 1: printf("Enter the value to be insert: ");
 		 scanf("%d", &value);
 		 enqueue(value);
-		 break;
-	 case 2: dequeue(); break;
-	 case 3: display(); break;
+		break;
+	 case 2: dequeue(); 
+      break;
+	 case 3: display();
+       break;
 	 case 4: exit(0); 
 	 default: printf("\n Invalid choice \n");
       }
