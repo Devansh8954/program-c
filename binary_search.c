@@ -2,8 +2,7 @@
 int main() {
     int a[100];
     int size;
-    int n=0;
-    int first=0,last=size-1;
+    int n;
 
     printf("Enter size of array \n");
     scanf("%d",&size);
@@ -18,20 +17,22 @@ int main() {
     printf("Enter number to find \n");
     scanf("%d",&n);
 
+    int first=0,last=size-1;
+
     while(first<=last)
     {
         int mid=(first+last)/2;
         if(a[mid] == n) {
             printf("Element found at %d",mid+1);
-            break;
+            return 0;
         }
         else if(a[mid]<n) {
-            last= mid-1;
+            first= mid+1;
         }
         else {
-            first = mid+1;
+            last = mid-1;
         }
     }
-    if(first > last)
      printf("Not found! %d isn't present in array", n);
+     return 0;
 }
