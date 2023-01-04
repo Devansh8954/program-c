@@ -7,7 +7,7 @@ void display();
 struct Node {
    int data;
    struct Node *next;
-}* top = NULL,*tmp;
+}* top = NULL,*tmp,*ptr;
 
 void main() {
    int ch, val,n;
@@ -52,11 +52,13 @@ void push() {
     top = tmp;
 }
 void pop() {
-   if(top==NULL)
+   ptr=top;
+   if(ptr==NULL)
    printf("Stack Underflow");
    else {
     printf("\n The pop element is %d \n",top->data);
       top = top->next;
+      free(ptr);
    }
 }
 void display() {
