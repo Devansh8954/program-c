@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 void enqueue();
 void dequeue();
 void display();
@@ -7,7 +8,7 @@ struct Node
 {
    int data;
    struct Node *next;
-}*front = NULL,*rear = NULL;
+}*front = NULL,*rear = NULL,*start=NULL,*tmp,*newNode;
 
 void main()
 {
@@ -33,12 +34,11 @@ void main()
 }
 void enqueue(int value)
 {
-   struct Node *newNode;
    newNode = (struct Node*)malloc(sizeof(struct Node));
    newNode->data = value;
    newNode -> next = NULL;
-   if(front == NULL)
-      front = rear = newNode;
+   if(start == NULL)
+      front = rear = start = newNode;
    else{
       rear -> next = newNode;
       rear = newNode;
@@ -46,25 +46,26 @@ void enqueue(int value)
 }
 void dequeue()
 {
-   if(front == NULL)
+   if(start == NULL)
       printf("\nQueue is Empty\n");
    else{
-      struct Node *temp = front;
+      tmp=front;
       front = front -> next;
-      printf("\nDeleted element: %d\n", temp->data);
-      free(temp);
+      printf("\nDeleted element: %d\n", tmp->data);
+      start=front;
+      free(tmp);
    }
 }
 void display()
 {
-   if(front == NULL)
+   if(start == NULL)
       printf("\nQueue is Empty\n");
    else{
-      struct Node *temp = front;
-      while(temp->next != NULL){
-	 printf("%d",temp->data);
-	 temp = temp -> next;
+      tmp = front;
+      while(tmp->next != NULL){
+	     printf(" %d",tmp->data);
+	     tmp = tmp -> next;
       }
-      printf("%d\n",temp->data);
+      printf(" %d\n",tmp->data);
    }
 }
